@@ -52,7 +52,9 @@ RUN mkdir -p $NO_VNC_HOME/utils/websockify; \
     wget -qO- https://github.com/novnc/websockify/archive/refs/tags/v0.11.0.tar.gz | tar xz --strip 1 -C $NO_VNC_HOME/utils/websockify; \
     ln -s $NO_VNC_HOME/vnc_lite.html $NO_VNC_HOME/index.html
 
-RUN apt install -y snapd; apt update; snap install firefox
+RUN add-apt-repository ppa:mozillateam/ppa; \
+    apt update; \
+    apt install -y firefox-esr
 
 
 RUN apt-get install -y chromium; \
