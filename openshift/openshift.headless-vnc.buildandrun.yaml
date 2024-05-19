@@ -147,8 +147,7 @@ parameters:
   name: APPLICATION_NAME
   required: true
   value: headless-vnc
-- description: 'Custom hostname for http service route.  Leave blank for default hostname,
-    e.g.: <application-name>-<project>.<default-domain-suffix>'
+- description: 'Custom hostname for http service route.  Leave blank for default hostname, e.g.: <application-name>-<project>.<default-domain-suffix>'
   name: HOSTNAME_HTTP
 - description: Git source URI for application
   name: SOURCE_REPOSITORY_URL
@@ -157,9 +156,9 @@ parameters:
 - description: Git branch/tag reference
   name: SOURCE_REPOSITORY_REF
   value: "master"
-- description: Name of the Dockerfile for example Dockerfile.debian-xfce-vnc, Dockerfile.rocky-icewm-vnc, Dockerfile.debian-icewm-vnc or Dockerfile.rocky-xfce-vnc
+- description: Name of the Dockerfile
   name: SOURCE_DOCKERFILE
-  value: Dockerfile.debian-xfce-vnc
+  value: Dockerfile
 - description: GitHub trigger secret
   from: '[a-zA-Z0-9]{8}'
   generate: expression

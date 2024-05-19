@@ -109,10 +109,9 @@ parameters:
   name: APPLICATION_NAME
   required: true
   value: headless-vnc
-- description: 'Custom hostname for http service route.  Leave blank for default hostname,
-    e.g.: <application-name>-<project>.<default-domain-suffix>'
+- description: 'Custom hostname for http service route.  Leave blank for default hostname, e.g.: <application-name>-<project>.<default-domain-suffix>'
   name: HOSTNAME_HTTP
 - description: Headless vnc image
   name: IMAGE
   required: true
-  value: consol/rocky-xfce-vnc:dev
+  value: consol/debian-xfce-vnc:dev

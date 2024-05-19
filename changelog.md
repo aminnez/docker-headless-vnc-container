@@ -1,5 +1,10 @@
 ## Changelog of the Docker headless VNC images
 
+### Version 3.0.0:
+* update debian 11 to 12
+* removed other variants
+* update packages
+
 ### Version 2.0.2:
 * fix not exposing VNC port ([#165](https://github.com/ConSol/docker-headless-vnc-container/issues/165)))
 
