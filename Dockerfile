@@ -60,7 +60,7 @@ RUN apt-get install -y chromium; \
 RUN apt-get install -y supervisor xfce4 xfce4-terminal xterm dbus-x11 libdbus-glib-1-2; \
     apt-get purge -y pm-utils *screensaver*
 
-RUN apt-get libnss-wrapper gettext;    
+RUN apt-get install -y libnss-wrapper gettext;    
 
 
 ADD ./src/common/xfce/ $HOME/
