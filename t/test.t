@@ -19,7 +19,7 @@ for my $svc (sort keys %{$conf->{'services'}}) {
 	my $app = $conf->{'services'}->{$svc};
 	ok(1, $svc);
 	for my $port (@{$app->{'ports'}}) {
-		my($ip, $localport, $remoteport) = split(/:/mx, $port);
+		my($localport, $remoteport) = split(/:/mx, $port);
 		ok(1, " - ".$remoteport);
 		if($remoteport eq "5901") {
 			# vnc test
