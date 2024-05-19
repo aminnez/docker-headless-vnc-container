@@ -7,7 +7,7 @@ use File::Basename;
 use YAML ();
 use Test::More;
 
-plan tests => 4;
+plan tests => 7;
 
 chdir(dirname($0));
 my $conf = YAML::LoadFile("docker-compose.yml");
