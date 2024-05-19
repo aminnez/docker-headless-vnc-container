@@ -2,7 +2,8 @@ name: Docker releases
 
 on:
   push:
-    # Pattern matched against refs/tags
+    branches:    
+      - master
     tags:        
       - '*'
 jobs:
