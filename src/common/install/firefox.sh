@@ -1,17 +1,30 @@
 #!/usr/bin/env bash
 set -e
 
-apt-get purge firefox-esr
-wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
-gpg -n -q --import --import-options import-show /etc/apt/keyrings/packages.mozilla.org.asc | awk '/pub/{getline; gsub(/^ +| +$/,""); print "\n"$0"\n"}'
-echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
-
-
-echo '
+echo \
+    "deb http://deb.debian.org/debian/ unstable main contrib non-free" >> \
+    /etc/apt/sources.list
+cat > /etc/apt/preferences.d/99pin-unstable <<EOF
 Package: *
-Pin: origin packages.mozilla.org
-Pin-Priority: 1000
-' | tee /etc/apt/preferences.d/mozilla
+Pin: release a=stable
+Pin-Priority: 900
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 10
+EOF
 
 apt-get update
-apt-get install -y firefox
+apt-get install -y -t unstable firefox
+
+# VERSION="102.3.0esr"
+# echo "Install Firefox $VERSION"
+
+# FF_INST='/usr/lib/firefox'
+
+# echo "download Firefox $FF_VERS and install it to '$FF_INST'."
+# mkdir -p "$FF_INST"
+# FF_URL=http://releases.mozilla.org/pub/firefox/releases/$FF_VERS/linux-x86_64/en-US/firefox-$FF_VERS.tar.bz2
+# echo "FF_URL: $FF_URL"
+# wget -qO- $FF_URL | tar xvj --strip 1 -C $FF_INST/
+# ln -s "$FF_INST/firefox" /usr/bin/firefox
