@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-VERSION="126.0"
-echo "Install Firefox $VERSION"
+FF_VERS="126.0"
+echo "Install Firefox $FF_VERS"
 
 FF_INST='/usr/lib/firefox'
 
