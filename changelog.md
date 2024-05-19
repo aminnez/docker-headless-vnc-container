@@ -1,7 +1,6 @@
 ## Changelog of the Docker headless VNC images
 
 ### Version 3.0.0:
-* update debian 11 to 12
 * removed other variants
 * update packages
 

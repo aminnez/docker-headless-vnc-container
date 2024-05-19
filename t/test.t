@@ -13,7 +13,7 @@ chdir(dirname($0));
 my $conf = YAML::LoadFile("docker-compose.yml");
 
 is(ref $conf->{'services'}, "HASH", "read docker-compose.yml");
-is(scalar %{$conf->{'services'}}, 4, "read services from docker-compose.yml");
+is(scalar %{$conf->{'services'}}, 1, "read services from docker-compose.yml");
 
 for my $svc (sort keys %{$conf->{'services'}}) {
 	my $app = $conf->{'services'}->{$svc};

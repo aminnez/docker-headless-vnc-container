@@ -1,6 +1,6 @@
 # This Dockerfile is used to build an headles vnc image based on Debian
 
-FROM debian:12
+FROM debian:11
 
 ENV REFRESHED_AT 2024-05-19
 
