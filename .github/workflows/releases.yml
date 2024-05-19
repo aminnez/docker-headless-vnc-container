@@ -3,7 +3,7 @@ name: Docker releases
 on:
   push:
     tags:
-    - 'v*'
+    - 'V*'
 
 jobs:
   build-and-test:
