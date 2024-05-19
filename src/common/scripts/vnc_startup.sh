@@ -6,13 +6,7 @@ set -e
 help (){
 echo "
 USAGE:
-docker run -it -p 6901:6901 -p 5901:5901 consol/<image>:<tag> <option>
-
-IMAGES:
-consol/debian-xfce-vnc
-consol/rocky-xfce-vnc
-consol/debian-icewm-vnc
-consol/rocky-icewm-vnc
+docker run -it -p 6901:6901 -p 5901:5901 aminnez/debian-xfce-vnc:<tag> <option>
 
 TAGS:
 latest  stable version of branch 'master'
@@ -21,12 +15,12 @@ dev     current development version of branch 'dev'
 OPTIONS:
 -w, --wait      (default) keeps the UI and the vncserver up until SIGINT or SIGTERM will received
 -s, --skip      skip the vnc startup and just execute the assigned command.
-                example: docker run consol/rocky-xfce-vnc --skip bash
+                example: docker run aminnez/debian-xfce-vnc --skip bash
 -d, --debug     enables more detailed startup output
-                e.g. 'docker run consol/rocky-xfce-vnc --debug bash'
+                e.g. 'docker run aminnez/debian-xfce-vnc --debug bash'
 -h, --help      print out this help
 
-Fore more information see: https://github.com/ConSol/docker-headless-vnc-container
+Fore more information see: https://github.com/aminnez/docker-headless-vnc-container
 "
 }
 if [[ $1 =~ -h|--help ]]; then

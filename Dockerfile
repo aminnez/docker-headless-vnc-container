@@ -27,7 +27,7 @@ ENV HOME=/headless \
     DEBIAN_FRONTEND=noninteractive \
     VNC_COL_DEPTH=24 \
     VNC_RESOLUTION=1080x1024 \
-    VNC_PW=vncpassword \
+    VNC_PW=123 \
     VNC_VIEW_ONLY=false
 WORKDIR $HOME
 
@@ -53,16 +53,14 @@ RUN mkdir -p $NO_VNC_HOME/utils/websockify; \
     ln -s $NO_VNC_HOME/vnc_lite.html $NO_VNC_HOME/index.html
 
 RUN $INST_SCRIPTS/firefox.sh
-#RUN add-apt-repository ppa:mozillateam/ppa; \
-#    apt update; \
-#    apt install -y firefox-esr
-
 
 RUN apt-get install -y chromium; \
     ln -sfn /usr/bin/chromium /usr/bin/chromium-browser
 
-RUN apt-get install -y supervisor xfce4 xfce4-terminal xterm dbus-x11 libdbus-glib-1-2 libnss-wrapper gettext; \
+RUN apt-get install -y supervisor xfce4 xfce4-terminal xterm dbus-x11 libdbus-glib-1-2; \
     apt-get purge -y pm-utils *screensaver*
+
+RUN apt-get libnss-wrapper gettext;    
 
 
 ADD ./src/common/xfce/ $HOME/

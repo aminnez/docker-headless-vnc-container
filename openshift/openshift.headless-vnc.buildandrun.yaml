@@ -6,7 +6,7 @@ metadata:
   annotations:
     description: Headless VNC (build & run)
     iconClass: icon-beaker
-    tags: headless,vnc,consol
+    tags: headless,vnc,aminnez
     version: 1.0.3
   creationTimestamp: null
   name: headless-vnc-build-and-run
@@ -152,7 +152,7 @@ parameters:
 - description: Git source URI for application
   name: SOURCE_REPOSITORY_URL
   required: true
-  value: https://github.com/ConSol/docker-headless-vnc-container.git
+  value: https://github.com/aminnez/docker-headless-vnc-container.git
 - description: Git branch/tag reference
   name: SOURCE_REPOSITORY_REF
   value: "master"

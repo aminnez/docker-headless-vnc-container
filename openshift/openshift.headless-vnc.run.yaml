@@ -6,7 +6,7 @@ metadata:
   annotations:
     description: Headless VNC (only run)
     iconClass: icon-beaker
-    tags: headless,vnc,consol
+    tags: headless,vnc,aminnez
     version: 1.0.3
   creationTimestamp: null
   name: headless-vnc-run
@@ -114,4 +114,4 @@ parameters:
 - description: Headless vnc image
   name: IMAGE
   required: true
-  value: consol/debian-xfce-vnc:dev
+  value: aminnez/debian-xfce-vnc:dev

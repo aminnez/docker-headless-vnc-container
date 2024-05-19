@@ -26,7 +26,7 @@ for my $svc (sort keys %{$conf->{'services'}}) {
 			eval {
 				alarm(3);
 				local $SIG{'ALRM'} = sub { die("timeout"); };
-				my $out = `echo "" | nc -q 1 -w 1 127.0.0.1 $localport 2>&1`;
+				my $out = `echo "" | nc -q 1 -w 1 0.0.0.0 $localport 2>&1`;
 				like($out, '/RFB/', "vnc connect header found")
 			};
 			alarm(0);
@@ -37,7 +37,7 @@ for my $svc (sort keys %{$conf->{'services'}}) {
 			eval {
 				alarm(3);
 				local $SIG{'ALRM'} = sub { die("timeout"); };
-				my $out = `curl -s http://127.0.0.1:$localport/?password=vncpassword 2>&1`;
+				my $out = `curl -s http://0.0.0.0:$localport/?password=123 2>&1`;
 				like($out, '/noVNC/', "web vnc html contains noVNC")
 			};
 			alarm(0);

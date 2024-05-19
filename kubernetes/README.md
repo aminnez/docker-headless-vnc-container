@@ -1,6 +1,6 @@
 # Kubernetes usage of "headless" VNC Docker images
 
-The following content uses as example the image `consol/debian-xfce-vnc` of the Dockerfile [`Dockerfile`](../Dockerfile).
+The following content uses as example the image `aminnez/debian-xfce-vnc` of the Dockerfile [`Dockerfile`](../Dockerfile).
 
 ## Deploy one pod of `debian-xfce-vnc` image and expose a service
 
