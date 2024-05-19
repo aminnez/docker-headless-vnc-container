@@ -2,9 +2,9 @@ name: Docker releases
 
 on:
   push:
-    tags:
-    - '*'
-
+    # Pattern matched against refs/tags
+    tags:        
+      - '*'
 jobs:
   build-and-test:
     name: build and test images
