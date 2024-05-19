@@ -47,6 +47,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
+        context: .
         file: Dockerfile
         build-args: OMD_VERSION=${{ env.BRANCH_NAME }}
         tags: |
