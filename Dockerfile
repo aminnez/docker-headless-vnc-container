@@ -37,8 +37,8 @@ RUN apt-get update && apt-get upgrade
 ADD ./src/common/install/ $INST_SCRIPTS/
 
 ### Install some common tools
-RUN apt-get install -y vim wget net-tools locales bzip2 procps apt-utils \
-    python3-numpy ttf-wqy-zenhei tigervnc-standalone-server
+RUN apt-get install -y vim wget net-tools locales bzip2 procps apt-utils
+RUN apt-get install -y python3-numpy ttf-wqy-zenhei tigervnc-standalone-server
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 RUN locale-gen
@@ -58,7 +58,7 @@ RUN install -d -m 0755 /etc/apt/keyrings; \
 
 RUN $INST_SCRIPTS/firefox.sh
 
-RUN apt-get update && apt-get install -y firefox
+RUN apt-get update; apt-get install -y firefox
 
 
 RUN apt-get install -y chromium; \
