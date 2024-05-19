@@ -52,13 +52,9 @@ RUN mkdir -p $NO_VNC_HOME/utils/websockify; \
     wget -qO- https://github.com/novnc/websockify/archive/refs/tags/v0.11.0.tar.gz | tar xz --strip 1 -C $NO_VNC_HOME/utils/websockify; \
     ln -s $NO_VNC_HOME/vnc_lite.html $NO_VNC_HOME/index.html
 
-RUN install -d -m 0755 /etc/apt/keyrings; \
-    wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null; \
-    echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
-
-RUN $INST_SCRIPTS/firefox.sh
-
-RUN apt-get update; apt-get install -y firefox
+RUN add-apt-repository ppa:mozillateam/ppa; \
+    apt update; \
+    apt install firefox
 
 
 RUN apt-get install -y chromium; \
