@@ -1,8 +1,8 @@
 # Docker container images with "headless" VNC session
 
-This repository contains a collection of Docker images with headless VNC environments.
+This repository contains a Docker image with headless VNC environments.
 
-Each Docker image is installed with the following components:
+It is installed with the following components:
 
 * Desktop environment [**Xfce4**](http://www.xfce.org)
 * VNC-Server (default VNC port `5901`)
@@ -14,14 +14,14 @@ Each Docker image is installed with the following components:
 ![Docker VNC Desktop access via HTML page](.pics/vnc_container_view.png)
 
 ## Build Status
-[![Build Status MASTER](https://github.com/aminnez/docker-headless-vnc-container/actions/workflows/nightly.yml/badge.svg)](https://github.com/aminnez/docker-headless-vnc-container/actions/workflows/nightly.yml)
+[![Build Status MASTER](https://github.com/aminnez/docker-headless-vnc-container/actions/workflows/releases.yml/badge.svg)](https://github.com/aminnez/docker-headless-vnc-container/actions/workflows/releases.yml)
 
 ## Current provided OS & UI sessions:
 * `aminnez/debian-xfce-vnc`: __Debian 11 with `Xfce4` UI session__
 
 ## OpenShift / Kubernetes
 
-It's also possible to run the images in container orchestration platforms like [Kubernetes](https://kubernetes.io) or [OpenShift](https://openshift.io/). For more information how to deploy containers in the cluster, take a look at:
+It's also possible to run the image in container orchestration platforms like [Kubernetes](https://kubernetes.io) or [OpenShift](https://openshift.io/). For more information how to deploy containers in the cluster, take a look at:
 
 * [Kubernetes usage of "headless" VNC Docker images](./kubernetes/README.md)
 * [OpenShift usage of "headless" VNC Docker images](./openshift/README.md)
@@ -59,7 +59,7 @@ If the container is started like mentioned above, connect via one of these optio
 ## Hints
 
 ### 1) Extend a Image with your own software
-Since version `1.1.0` all images run as non-root user per default, so if you want to extend the image and install software, you have to switch back to the `root` user:
+Since version `1.1.0` the image runs as non-root user per default, so if you want to extend the image and install software, you have to switch back to the `root` user:
 
 ```bash
 ## Custom Dockerfile
