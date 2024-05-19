@@ -3,9 +3,9 @@ name: Docker releases
 on:
   push:
     branches:
-    - 'v*'
+    - 'master'
     tags-ignore:
-    - '*'
+    - 'v*'
 
 jobs:
   build-and-test:
