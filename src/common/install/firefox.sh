@@ -14,4 +14,4 @@ Pin-Priority: 1000
 ' | tee /etc/apt/preferences.d/mozilla
 
 apt-get update
-apt-get install firefox
+apt-get install -y firefox
