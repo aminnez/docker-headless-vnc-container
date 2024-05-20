@@ -64,8 +64,8 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        context: .
         file: Dockerfile
+        context: .
         tags: |
           ghcr.io/aminnez/docker-headless-vnc-container/${{ matrix.target }}:${{ env.BRANCH_NAME }}
           ghcr.io/aminnez/docker-headless-vnc-container/${{ matrix.target }}:latest
