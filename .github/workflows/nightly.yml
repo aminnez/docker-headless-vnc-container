@@ -51,6 +51,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
+        context: .
         file: Dockerfile
         tags: aminnez/${{ matrix.target }}:nightly
         platforms: linux/amd64,linux/arm64
